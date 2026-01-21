@@ -22,9 +22,13 @@
 
 ## design
 
-基于./specs/0002-suricata-explore.md，进行详细的方案设计，要求如下：
+基于./specs/0002-suricata-explore.md和./specs/0003-rule-traffic-generator.md 进行详细的方案设计，要求如下：
 
-1、
+1、简化告警日志模块的设计，不需要消息队列、告警处理器、Elasticsearch的设计，日志解析器直接调用后端接口上报日志，关联规则，前端展示。
+2、简化后端的设计，后端数据库postgres改成mysql，去掉redis，elasticsearch
+3、攻击测试执行采用Scapy实时的方式，去掉PCAP+tcpreplay；去掉测试网卡，采用真真实的网卡
+4、去掉LLM辅助模块
+5、不要有代码的引入
+6、使用 mermaid 绘制架构，设计，组件，流程等图表并详细说明
 
-
-保存到./specs/0003-design.md
+保存到./specs/0004-design.md
